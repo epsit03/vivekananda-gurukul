@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    padding-top: 12px;
+    font-size: 40px;
+    position: relative;
+    z-index: 1; /* Ensures the text appears above the underline */
+    margin-bottom: -20px; /* Adjust based on how much overlap is needed */
+}
+
+h3 {
+    font-size: 32px;
+}
+
+p{
+    size: 29px;
+}
+
+/* Underline for Section Titles */
+.underline {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5px; /* Ensure the overlap looks smooth */
+    margin-bottom: 20px;
+    z-index: 2; /* Keeps the underline behind the text */
+}
+
+/* Decorative SVG Shapes */
+.decorative-shape {
+    position: absolute;
+    z-index: -1;
+}
+
+.shape-1 {
+    top: 50px;
+    left: -50px;
+}
+
+.shape-2 {
+    bottom: 50px;
+    right: -50px;
+}
+
+.shape-3 {
+    top: 30%;
+    right: 50%;
+}
+
+/* Example Background Decorations */
+.background-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.background-shape svg {
+    opacity: 0.1;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #f0f4f8);
+    color: #444;
+    line-height: 1.6;
+}
+
+.main-header {
+    background-color: #E77B46 !important;
+}
+header {
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white !important;
+}
+
+/* Default nav links style for desktop */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
+
+/* Hamburger button styles */
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100; /* Above nav links */
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Media query to handle mobile responsiveness */
+@media (max-width: 768px) {
+    /* Hide nav links initially on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #E77B46;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+    }
+
+    /* Show hamburger on mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Show nav links when the menu is active */
+    .nav-links.active {
+        display: flex; /* Change from 'none' to 'flex' when active */
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #FFC107;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+.hero {
+    height: 100vh;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hideen;
+}
+
+.hero .overlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Heading Animation */
+.hero h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    z-index: 1;
+    animation: slideDown 1.5s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation-delay: 0.5s; /* delay for h1 to appear */
+}
+
+/* Paragraph Animation */
+.hero p {
+    font-size: 24px;
+    margin: 20px 0;
+    z-index: 1;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    animation-delay: 2s; /* delay for p to appear after h1 */
+}
+
+/* Button Animation */
+.cta-button {
+    background-color: #E77B46;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 3s; /* delay for button to appear after p */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+a {
+    color: white;
+}
+.cta-button:hover {
+background-color: #ff9864;
+    transform: scale(1.05); /* adds an elegant hover effect */
+}
+
+
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+/* Student Life Section */
+.student-life-section {
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#std-text {
+    font-family: 'Schoolbell', arial, serif;
+    font-style: italic;
+}
+
+
+.student-life-section h2 {
+    font-size: 56px;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.daily-life, .student-achievements {
+    /* margin-bottom: 40px; */
+    animation: fadeIn 1.4s ease-in-out;
+}
+
+.daily-life p, .student-achievements p {
+    font-size: 21px;
+    color: #555;
+    animation: fadeIn 1.6s ease-in-out;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    animation: fadeIn 1.8s ease-in-out;
+    padding: 20px; /* Add padding to prevent images from touching edges */
+}
+
+.gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin: 20px; /* Add margin between images */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Image Hover Effect */
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.achievement-list {
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeIn 2s ease-in-out;
+    padding: 20px;
+    justify-content: space-between; /* Ensure space between cards */
+}
+
+.achievement-item {
+    flex: 0 1 calc(33.333% - 20px); /* 3 cards per row, adjusting for margin */
+    margin: 10px; /* Add some space between the cards */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect on Achievement Items */
+.achievement-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-item h4 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    animation: rotateIn 2.6s ease-in-out;
+}
+
+.achievement-item p {
+    font-size: 16px;
+    color: #555;
+    animation: fadeIn 2.8s ease-in-out;
+}
+
+/* CTA Button Animation */
+.cta-button {
+    display: inline-block;
+    background-color: #E77B46;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #FFC107;
+    transform: scale(1.05);
+}
+
+/* Section Titles Hover Effect */
+.student-life-section h2:hover,
+.daily-life h3:hover,
+.student-achievements h3:hover {
+    color: #E77B46;
+    transform: scale(1.1);
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+/* Keyframes for animations */
+
+/* Slide down animation for heading */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+
+/* Fade in and up animation for paragraph */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Simple fade-in animation for button */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.about-section, .programs-section, .teachers-section, .footer {
+    padding: 20px 10px;
+    text-align: center;
+    animation: fadeUp 1.5s ease;
+}
+
+.teachers-section {
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 5px dashed black;
+    border-radius: 35px ;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #E77B46;
+    color: #f8f2ff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-profile {
+    margin: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.teacher-profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 5px solid #4A148C;
+}
+
+.teacher-profile:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background: #E77B46;
+    color: white;
+    padding: 30px;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
