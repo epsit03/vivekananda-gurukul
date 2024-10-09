@@ -3,6 +3,7 @@
     padding: 0;
     font-size: 25px;
     box-sizing: border-box;
+    
     font-family: 'Poppins', sans-serif;
 }
 
@@ -66,7 +67,8 @@ p{
 }
 
 body {
-    background: linear-gradient(to bottom, #ffffff, #f0f4f8);
+    /* background: linear-gradient(to bottom, #ffffff, #f0f4f8); */
+    background-color: #f7fbff; /* Light azure background */
     color: #444;
     line-height: 1.6;
 }
@@ -232,7 +234,7 @@ a {
     color: white;
 }
 .cta-button:hover {
-background-color: #ff9864;
+background-color: #f26a26;
     transform: scale(1.05); /* adds an elegant hover effect */
 }
 
@@ -263,7 +265,7 @@ background-color: #ff9864;
 /* Student Life Section */
 .student-life-section {
     padding: 50px 20px;
-    background-color: #f7f7f7;
+    /* background-color: #f7f7f7; */
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
@@ -272,7 +274,6 @@ background-color: #ff9864;
     font-family: 'Schoolbell', arial, serif;
     font-style: italic;
 }
-
 
 .student-life-section h2 {
     font-size: 56px;
@@ -364,10 +365,7 @@ background-color: #ff9864;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.cta-button:hover {
-    background-color: #FFC107;
-    transform: scale(1.05);
-}
+
 
 /* Section Titles Hover Effect */
 .student-life-section h2:hover,
@@ -473,7 +471,11 @@ background-color: #ff9864;
 footer {
     background: #E77B46;
     color: white;
-    padding: 30px;
+    padding: 18px;
+}
+
+#contact {
+    padding-top: 12px;
 }
 
 @keyframes slideDown {
@@ -489,4 +491,88 @@ footer {
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(50px); }
     to { opacity: 1; transform: translateY(0); }
+}
+.birthday-section {
+    text-align: center;
+    /* padding: 50px 0; */
+    overflow: hidden;
+    position: relative;
+}
+
+.birthday-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 55px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards, slideUp 1.5s ease-in-out forwards;
+}
+
+.birthday-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    /* background: linear-gradient(145deg, #fff9f6, #ffd0ca); */
+    background: linear-gradient(145deg, #ffffff, #f0f8ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-in-out forwards, slideUp 1s ease-in-out forwards;
+    animation-delay: 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.birthday-item h4 {
+    color: #333;
+    font-family: 'Schoolbell', cursive; /* Stylish font from Google Fonts */
+    font-size: 1.6em;
+}
+
+.birthday-item p {
+    font-size: 1.2em;
+    color: #666;
+    font-family: 'Arial', sans-serif;
+}
+
+.birthday-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #fff4f3, #ffcbb1); /* Slight gradient on hover */
+}
+
+/* Enhanced Blinking Animation */
+@keyframes blink {
+    0% { 
+        opacity: 1; 
+        color: #333; /* Default color */
+        text-shadow: none;
+    }
+    25% { 
+        opacity: 0.8;
+        color: #ff8f57; /* First color transition */
+    }
+    50% { 
+        opacity: 0.6; 
+        color: #ff5722; /* Brighter transition */
+    }
+    75% { 
+        opacity: 0.8; 
+        color: #ff8f57; /* Back to softer color */
+    }
+    100% { 
+        opacity: 1; 
+        color: #333; /* Reset to original color */
+        text-shadow: none;
+    }
+}
+
+/* Apply blinking to headings */
+#up-bdy {
+    animation: blink 1.5s infinite; /* Blinking every 1 second */
+    transition: all 0.7s ease-in-out; /* Smooth transition on hover and focus */
+}
+
+#up-bdy:hover {
+    transform: scale(1.5); /* Slight zoom-in on hover for more interaction */
+    transition: transform 0.3s ease-in-out;
 }
