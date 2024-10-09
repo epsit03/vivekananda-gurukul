@@ -175,6 +175,7 @@ header {
     width: 100%;
 }
 .hero {
+    top: 190px;
     height: 100vh;
     background: url('hero-bg.jpg') no-repeat center center/cover;
     display: flex;
