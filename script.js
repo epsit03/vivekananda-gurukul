@@ -18,6 +18,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Intersection Observer for triggering animations
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.hidden').forEach(section => {
+        observer.observe(section);
+    });
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const hiddenElements = document.querySelectorAll('.hidden');
 
