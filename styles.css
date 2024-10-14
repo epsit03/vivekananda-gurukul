@@ -174,8 +174,11 @@ header {
 .nav-links a:hover:after {
     width: 100%;
 }
+
+/* Fix overlapping by adding padding */
 .hero {
     top: 190px;
+    padding: 100px 20px;
     height: 100vh;
     background: url('hero-bg.jpg') no-repeat center center/cover;
     display: flex;
@@ -574,6 +577,63 @@ footer {
 #up-bdy {
     animation: blink 1.5s infinite; /* Blinking every 1 second */
     transition: all 0.7s ease-in-out; /* Smooth transition on hover and focus */
+}
+
+.about-section {
+    position: relative;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #fff, #f7f7f7);
+    z-index: 1;
+    margin-top: 50px;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations and styling for text */
+.about-section p {
+    font-family: 'Schoolbell', sans-serif;
+    font-size: 20px;
+    color: #333;
+    line-height: 1.8;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    text-align: center;
+    font-family: 'Schoolbell', cursive;
+    color: #E77B46;
+    margin-bottom: 20px;
+    animation: slideIn 1.2s ease;
+}
+
+.underline {
+    animation: dash 2s ease-in-out forwards;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes dash {
+    from { stroke-dasharray: 100; stroke-dashoffset: 100; }
+    to { stroke-dashoffset: 0; }
 }
 
 #up-bdy:hover {
