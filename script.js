@@ -51,16 +51,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Sample student data with names and birthdays
+// Student data with names and birthdays
 const students = [
-    { name: "Rajesh Kumar", birthday: "1990-10-15" },
-    { name: "Sita Verma", birthday: "1995-10-25" },
-    { name: "Mahendra Singh", birthday: "1998-11-02" },
-    { name: "Praveen Singh", birthday: "2000-12-05" },
-    { name: "Alok Sharma", birthday: "2001-01-17" },
-    { name: "Meena Devi", birthday: "2002-11-30" },
-    { name: "Rohit Yadav", birthday: "1997-12-22" }
+    { name: "ABDUL HANNAN ALI", birthday: "2018-12-22" },
+    { name: "ABIDA BEGUM", birthday: "2016-01-28" },
+    { name: "ARIBUL", birthday: "2019-01-01" },
+    { name: "ARJEENA", birthday: "2018-01-01" },
+    { name: "BAHARJAN", birthday: "2014-06-26" },
+    { name: "BEER SINGH", birthday: "2012-01-01" },
+    { name: "CHIRAG", birthday: "2024-07-20" },
+    { name: "GAURAV", birthday: "2016-01-01" },
+    { name: "JAHIDUL", birthday: "2012-07-29" },
+    { name: "KANCHAN", birthday: "2016-01-01" },
+    { name: "MAHARJAN", birthday: "2017-12-20" },
+    { name: "MANMOHAN", birthday: "2019-01-01" },
+    { name: "MARJEENA", birthday: "2017-01-01" },
+    { name: "NEELESH", birthday: "2016-09-20" },
+    { name: "NIDHI", birthday: "2011-11-25" },
+    { name: "RAJAWALI", birthday: "2015-01-01" },
+    { name: "RAMDEVI", birthday: "2014-01-01" },
+    { name: "RANI", birthday: "2018-01-01" },
+    { name: "RUPESH RAJAK", birthday: "2015-02-10" },
+    { name: "SANJU", birthday: "2015-01-01" },
+    { name: "SATYAM (NDRF)", birthday: "2012-01-01" },
+    { name: "SEVAK RAJAK", birthday: "2013-03-24" },
+    { name: "SHAHALAM", birthday: "2014-01-01" },
+    { name: "SHAHIPUL", birthday: "2016-01-01" },
+    { name: "SHIVANI", birthday: "2019-08-30" },
+    { name: "SUHANA AKHTRA", birthday: "2017-09-28" },
+    { name: "SUNNY", birthday: "2019-01-01" },
+    { name: "VANSH", birthday: "1012-01-01" },
+    { name: "RACHANA", birthday: "2014-01-01" },
+    { name: "ARCHANA", birthday: "2017-03-19" },
+    { name: "ANJALI RAJAK", birthday: "2015-01-01" },
+    { name: "PRINCE RAJAK", birthday: "2017-10-30" },
 ];
+
 
 // Function to get the next upcoming birthday within the running year
 function getNextBirthday(birthdayStr) {
